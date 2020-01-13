@@ -17,9 +17,9 @@ int main()
 
     int x = 6, y = 6;
     cout << x << " " << y << endl;
-    cout << ++x << " " << --y << endl; // 일단 x,y 값을 출력한 뒤 x,y 값에 각각 ++, --해서 대입하는것
+    cout << ++x << " " << --y << endl; 
     cout << x << " " << y << endl; // 7,5
-    cout << x++ << " " << y-- << endl;
+    cout << x++ << " " << y-- << endl; // 일단 x,y 값을 출력한 뒤 x,y 값에 각각 ++, --해서 대입하는것
     cout << x << " " << y << endl; //중요!
 
     int v = add(x, ++x); // 쓰지마!! 같은 변수에 대해 쓰지 않기
