@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3480F373-65A6-4842-9240-AE2E3EA72E20}</ProjectGuid>
+    <ProjectGuid>{BBD2FFFC-05CF-4576-82B9-6734F9B450E2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lecture0503</RootNamespace>
+    <RootNamespace>Lecture0601</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,7 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lecture05_03.cpp" />
+    <ClCompile Include="Lecture06_01.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
