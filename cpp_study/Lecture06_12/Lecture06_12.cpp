@@ -34,7 +34,7 @@ int main()
 
     int fixeArray[] = { 1, 2, 3, 4, 5 };
     
-    //int *array = new int[] {1, 2, 3, 4, 5}; //new는 런타임 때 수를 정할 수 없어 error발생
+    //int *array = new int[] {1, 2, 3, 4, 5}; //new는 런타임 때 수를 정할 수 없어 error발생(cin으로는 가능)
     int *array = new int[3] {1, 2, 3, 4, 5}; // initialization보다 적은 array는 에러발생
 
 
