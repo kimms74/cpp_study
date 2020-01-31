@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 void addOne(int &y) //call by reference
@@ -18,6 +18,34 @@ void getSinCos(const double &degrees, double &sin_out, double &cos_out)  //c나 c
     cos_out = cos(radians);
 }
 
+//void foo(const int &x)      //실무에서 가장 많이 쓰는 형식이다!
+//{
+//    cout << x << endl;
+//}
+
+//void foo(int *&ptr)      //parameter 의미: (int *) &ptr   //pointer를 인수로 받을 때 사용
+//{
+//    cout << ptr << " " << &ptr <<endl;
+//}
+
+typedef int *pint;
+
+void foo(pint &ptr)     //int *&ptr와 같다
+{
+    cout << ptr << " " << uintptr_t(&ptr) << endl;
+}
+
+void printElements(const int (&arr)[5])   //정적 배열을 parameter로 사용할 때 array의 크기를 []로 적어줘야함
+{                                   //실제로는 array를 parameter로 사용할 때는 동적 배열만 쓴다
+
+}
+
+void printElements(const vector<int> &arr)    //동적 배열은 vector로 간단히 나타낼 수 있다
+{
+
+}
+
+
 int main()
 {
     //int x = 5;
@@ -33,15 +61,36 @@ int main()
 
 
 
-    double sin(0.0);
-    double cos(0.0);
+    //double sin(0.0);
+    //double cos(0.0);
 
-    getSinCos(30.0, sin, cos);  
-    //call by reference를 이용해 함수 밖에서 변수를 정의하고 return 값을 여러개 나오는 것 처럼 사용가능
+    //getSinCos(30.0, sin, cos);  
+    ////call by reference를 이용해 함수 밖에서 변수를 정의하고 return 값을 여러개 나오는 것 처럼 사용가능
 
-    cout << sin << " " << cos << endl;
+    //cout << sin << " " << cos << endl;
 
 
+
+
+    //foo(6);     //foo의 parameter를 const int &로 하면 인수에 상수를 넣을 수 있다
+
+
+
+
+    //int x = 5;
+    ////int *ptr = &x;
+    //pint ptr = &x;    //int *를 pint로 typedef해서 간편히 나타낼 수 있다
+
+    //cout << ptr << " " << uintptr_t(&ptr) << endl;
+    //foo(ptr);
+
+    
+
+    
+    //int arr[] { 1,2,3,4,5 };
+    vector <int> arr{ 1,2,3,4,5 };
+
+    printElements(arr);
 
 
 
