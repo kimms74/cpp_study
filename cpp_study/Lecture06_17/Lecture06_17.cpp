@@ -16,12 +16,13 @@ int main()
 
 
     ////change array values
-    ////for (const int number : fibonacci)    //함수 parameter처럼 for 내부의 number는 빠져나오면 사라진다
+    ////for (const int number : fibonacci)    //함수 parameter처럼 for 내부의 number는 빠져나오면 사라진다( output에서 10으로 안나옴)
     ////    number = 10;                      //그래서 보통 const int로 값을 변경 못하게 사용
 
     ////for (auto &number : fibonacci)           //int &는 그대로 가져오는 것이기때문에 값을 변경할 수 있다
     ////    number *= 10;                        //보통 type을 auto로 가져감
 
+    //////output
     ////for (int number : fibonacci)
     ////    cout << number << " ";
     ////cout << endl;

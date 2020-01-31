@@ -21,7 +21,7 @@ int main()
 
     Person *ptr = &person;
     ptr->age = 30;
-    (*ptr).age = 20;
+    (*ptr).age = 20;        // member selection operator가 *보다 우선순위가 높다
 
     Person &ref2 = *ptr;
     ref2.age = 45;

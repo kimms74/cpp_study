@@ -3,7 +3,7 @@
 using namespace std;
 
 void doSomething(const int& x)      // const int&로 parameter를 사용하면 복사하는게 아닌 그 값 그대로 사용가능
-{
+{                                   // 상수를 함수의 parameter에 넣어도 사용 가능하다
     cout << x << endl;
 }
 
@@ -43,7 +43,7 @@ int main()
 
     int a = 1;
     doSomething(a);
-    doSomething(1);
+    doSomething(1);     // doSomething의 parameter로 const int &를 사용하면 상수도 넣을 수 있다 
     doSomething(a + 3);
     doSomething(3 * 4);
     

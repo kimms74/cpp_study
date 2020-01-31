@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//int doSomething(int n)
+//void doSomething(int n)
 //{
 //    n = 10;
 //
@@ -11,7 +11,7 @@ using namespace std;
 
 
 
-//int doSomething(int &n)
+//void doSomething(int &n)
 //{
 //    n = 10;
 //
@@ -20,14 +20,14 @@ using namespace std;
 
 
 
-int doSomething(const int &n)   //n이 doSomething에 들어가는데 함수가 n의 값을 못바꾸게 하고 싶을때 const를 붙인다
+void doSomething(const int &n)   //n이 doSomething에 들어가는데 함수가 n의 값을 못바꾸게 하고 싶을때 const를 붙인다
 {                               //c++ 17부터 return값을 여러개 받을 수 있게 된 후 깔끔하게 정리하기 위해 이렇게 사용함
     n = 10;                     //const가 붙어서 값을 변경 못함
 
     cout << n << endl;  
 }                       
 
-int printElements(int (&arr)[5])    //ref에 array를 사용하려면 array의 수를 넣어줘야함
+void printElements(int (&arr)[5])    //ref에 array를 사용하려면 array의 수를 넣어줘야함
 {
     for (int i = 0; i < 5; ++i)
     {
@@ -83,7 +83,7 @@ int main()
 
 
 
-    ////re-assignment of refence variable
+    ////re-assignment of reference variable
     //int value1 = 2;
     //int value2 = 4;
 
