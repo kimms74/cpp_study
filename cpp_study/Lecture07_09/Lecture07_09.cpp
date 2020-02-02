@@ -1,9 +1,10 @@
 #include <iostream>
 #include <array>
+#include <functional>   //function
 
 using namespace std;
 
-int func()
+int func(int x)
 {
     return 5;
 }
@@ -45,9 +46,23 @@ bool isOdd(const int &number)
 //    cout << endl;
 //}
 
-typedef bool (*check_fcn_t)(const int &);   //typedef로 간단히 표현할 수 있다
 
-void printNumbers(const array<int, 10> &my_array, check_fcn_t check_fcn = isEven)   //parameter 맞춰줘야함   
+
+////typedef bool (*check_fcn_t)(const int &);   //typedef로 간단히 표현할 수 있다
+//using check_fcn_t = bool (*)(const int &);  //using도 사용가능
+//
+//void printNumbers(const array<int, 10> &my_array, check_fcn_t check_fcn = isEven)   //parameter 맞춰줘야함   
+//{
+//    for (auto element : my_array)
+//    {
+//        if (check_fcn(element) == true) cout << element;
+//    }
+//    cout << endl;
+//}
+
+
+//c++의 functional을 이용해 간단히 나타낼 수 있다, 요즘에는 function pointer보다 많이 사용함
+void printNumbers(const array<int, 10> &my_array, std::function<bool(const int &)> check_fcn)
 {
     for (auto element : my_array)
     {
@@ -67,26 +82,37 @@ int main()
 
 
     ////int(*fcnptr)() = func();    //함수 이름 뒤 () 의미: 함수를 실행시켜서 결과값을 받아오겠다
-    //int(*fcnptr)() = func;      //()없으면 pointer를 가져오겠다는 것
+    //int(*fcnptr)(int) = func;      //()없으면 pointer를 가져오겠다는 것
     //                            //함수에 parameter가 있으면 fcnptr()안에도 type을 넣어줘야함 ex) fcnptr(int)  
     //cout << fcnptr() << endl;
 
     //fcnptr = goo;       //함수를 바꿔치기 할 수도 있다
-
+                        //goo()는 parameter가 없기 때문에 오류 발생 
     //cout << fcnptr() << endl;
 
 
 
 
-    //function pointer를 함수 parameter에 넣을 수 있다
+    ////function pointer를 함수 parameter에 넣을 수 있다
+    //std::array<int, 10> my_array{ 0,1,2,3,4,5,6,7,8,9 };
+
+    //printNumbers(my_array, isEven); //함수는 자체가 pointer이기 때문에 &안붙여도 됨
+    //printNumbers(my_array, isOdd);
+    ////함수를 parameter로 사용하여 함수를 좀 더 짧게 만듬, 나중에 다형성을 이해할 때 도움됨
+
+    //printNumbers(my_array);     //default parameter를 사용하면 parameter를 안넣어 줘도 됨
+
+
+    
     std::array<int, 10> my_array{ 0,1,2,3,4,5,6,7,8,9 };
 
-    printNumbers(my_array, isEven); //함수는 자체가 pointer이기 때문에 &안붙여도 됨
-    printNumbers(my_array, isOdd);
-    //함수를 parameter로 사용하여 함수를 좀 더 짧게 만듬, 나중에 다형성을 이해할 때 도움됨
+    std::function<bool(const int &)> fcnptr = isEven;   //initialization
 
-    printNumbers(my_array);     //default parameter를 사용하면 parameter를 안넣어 줘도 됨
+    printNumbers(my_array, fcnptr);
 
+    fcnptr = isOdd;
+
+    printNumbers(my_array, fcnptr);
 
     return 0;
 }
