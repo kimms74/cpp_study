@@ -5,7 +5,7 @@ using namespace std;
 
 int getInt()
 {
-    while (true)
+    while (true)    //옳은 입력이 들어왔을 때만 loop를 빠져나오게 코딩하는게 좋다
     {
         cout << "Enter an integer number : ";
         int x;
