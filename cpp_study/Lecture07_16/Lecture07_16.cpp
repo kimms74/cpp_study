@@ -12,7 +12,7 @@ double findAverage(int count, ...)  // ...:생략 부호 ellipsis(일립시스)
     va_start(list, count);
 
     for (int arg = 0; arg < count; ++arg)
-        sum += va_arg(list, int);   //type을 반드시 정해줘야함
+        sum += va_arg(list, int);   //type을 반드시 정해줘야함   //int로 변환을 해줌
 
     va_end(list);
 

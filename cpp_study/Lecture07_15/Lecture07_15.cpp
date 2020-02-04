@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-int main(int argc, char *argv[])    //문자열의 array: 2차 array?
-{
+int main(int argc, char *argv[])    //char argv[]: 문자열(=char *argv), char *argv[]:문자열의 배열(=char **argv)
+{                                   //char *의 변수를 부르면 pointer가 아닌 문자열이 나옴
     for (int count = 0; count < argc; ++count)
     {
         string argv_single = argv[count];
