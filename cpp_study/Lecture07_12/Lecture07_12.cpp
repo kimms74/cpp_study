@@ -51,8 +51,9 @@ int fibo(int num)
     for (int i = 2; i < num; i++)
         fibo_1[i] = fibo_1[i - 1] + fibo_1[i-2];
 
-    return fibo_1[num];
+    return fibo_1[num-1];
 }
+
 int main()
 {
     countDown(5);
