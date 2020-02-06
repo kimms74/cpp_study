@@ -8,7 +8,7 @@ using namespace std;
 //public:
 //    int _value = 0;
 //
-//    Something(const Something &st_in)   //class내부에 숨어있는 constructor이다
+//    Something(const Something &st_in)   //class내부에 숨어있는 copy constructor이다
 //    {
 //        _value = st_in._value;
 //
@@ -33,13 +33,14 @@ using namespace std;
 //};                          
 
 //void print(Something st)    //Copy constructor를 호출하여 복사한다(다른 type에서도 동일하다!)
-//{                           //parameter에 변수가 들어가면 복사되는 것을 class를 통해 증명함
+//{                           //parameter에 변수가 들어가면 복사되는 것을 class를 통해 증명함(주소가 다르므로)
 //    cout << &st << endl;
 //    cout << st._value << endl;
 //}
 
-//void print(const Something& st) //복사하는 것을 원치 않는다면 const reference를 이용하면 된다!
-//{                               //효율성에 영향을 많이 준다
+//void print(const Something& st) //복사는 parameter로 인수가 들어갈 때 발생하는 것이다
+//{                               //복사하는 것을 원치 않는다면 const reference를 이용하면 된다(주소가 같다)
+//                                //효율성에 영향을 많이 준다
 //    cout << &st << endl;
 //    cout << st.getValue << endl;
 //}
@@ -55,7 +56,7 @@ public:
         return s_value; 
     }
 
-    string& getValue()              //member function의 const여부가 overloading 가능함을 보여줌
+return by reference를 왜 하는거야!    string& getValue()              //member function의 const여부가 overloading 가능함을 보여줌
     {
         cout << "non-const version" << endl;
         return s_value; 
@@ -67,16 +68,16 @@ public:
 int main()
 {
     //const Something something;    //const: something 안의 것을 바꾸지 않겠다는 의미
-    ////something.setValue(3);
+    ////something.setValue(3);      //const class이므로 오류발생
 
     //something.getValue; // getValue() 뒤에 const가 붙어있어 실행 가능
-    
+                        //const class는 const member function만 실행할 수 있다
     
     
     
     //Something something;  //something을 instance나 object라고 부름
 
-    //cout << &something << endl; //print(something)속의 &st와 다른 것을 알 수 있다
+    //cout << &something << endl; //print(something)의 &st와 다른 것을 알 수 있다
 
     //print(something);   //print는 class 외부 함수 이므로 parameter로 class를 받으면
     //                    //복사돼서 들어가므로 Something()이 실행되며 "Constructor"가 생겨야하는데 생기지 않았다

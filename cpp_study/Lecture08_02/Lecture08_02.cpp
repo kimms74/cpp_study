@@ -12,7 +12,7 @@ class Date
     int _month;
     int _day;
     int _year;
-public:     //Encapsulation: 같은 class 안의public에 있는 것은 private에 접근 할 수 있다
+public:     //Encapsulation: 같은 class 안의 public에 있는 것은 private에 접근 할 수 있다
     void setDate(const int &month_input, const int &day_input, const int &year_input)   //access function
     {    //setters
         _month = month_input;

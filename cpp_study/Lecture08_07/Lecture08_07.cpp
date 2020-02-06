@@ -13,9 +13,10 @@ public:
     Simple(int id_in)
     {
         this->setID(id_in);     //다른 instance끼리 구별하는 법: 내부적으로 this->가 숨어있다
-        //(*this).setID(id_in); //위와 같은 의미다
+                                //(-> 뜻: class나 struct가 pointer일 경우 member selection operator)
+        //(*this).setID(id_in); //위와 같은 의미다(. 뜻: member selection operator)
 
-        cout << this << endl;   //this: 자기 자신의 주소를 출력해줌
+        cout << this << endl;   //this: instance의 pointer
     }
     void setID(int id_in) { _id = id_in; }
     int getID() { return _id; }

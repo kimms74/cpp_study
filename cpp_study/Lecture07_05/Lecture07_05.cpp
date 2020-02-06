@@ -4,24 +4,24 @@
 
 using namespace std;
 
-//int getValue(int x)       // return by value
+//int getValue(int x)       // return by value  //line 56
 //{
 //    int value = x * 2;
 //    return value;
 //}
 
-//int* getValue(int x)       // return by pointer
+//int* getValue(int x)       // return by pointer //line 61, 65
 //{
 //    int value = x * 2;
 //    return &value;
 //}
 
 int* allocateMemory(int size)       // return by pointer 사용하는 경우
-{
-    return new int[size];
-}
+{                                   //factory pattern에 사용됨
+    return new int[size];           //return 값이 동적 할당일 때?
+}                                   //delete[]을 main()에서 해줘야해서 번거롭다
 
-int& getValue(int x)       //return by reference
+int& getValue(int x)       //return by reference    //line 78, 82
 {
     int value = x * 2;
     return value;
@@ -62,18 +62,11 @@ int main()
 
     //cout << value << endl;
 
-
-
-
-
     //int *value = getValue(3);       //warning: local variable의 주소를 받으면 함수를 빠져나올 때 사라지기에 더 위험하다
   
     //cout << *value << endl;
 
-
-
-
-
+    
     //int *array = allocateMemory(1024);      // return by pointer 사용하는 경우
 
     //delete[] array;                         // 이 경우 따로 delete을 해줘야한다
@@ -82,26 +75,20 @@ int main()
 
 
 
-    //int value = getValue(5);
+    //int value = getValue(5);              //return by reference
 
     //cout << value << endl;
 
+    //int &value = getValue(5);               //함수가 끝나면 사라지는 local variable의 reference를 다시 referencing하므로 위험하다
 
+    //cout << value << endl;                  //첫번째 cout에서는 잘 나온다  
+    //cout << value << endl;                  //그러나 두번째 cout할 때 쓰레기 값이 value로 들어가버림
 
-
-
-    //int &value = getValue(5);               //local variable의 reference를 다시 referencing하므로 위험하다
-
-    //cout << value << endl;
-    //cout << value << endl;                  //두번째 cout할 때 쓰레기 값이 value로 들어가버림
-
-
-
-
+       
     //array<int, 100> my_array;               //메모리에 미리 array이가 저장되어있음
     //my_array[30] = 10;
 
-    //get(my_array, 30) = 1024;               //return by reference로 인해 my_array[30]과 get(my_array, 30)이 같은 것을 가리킨다
+    return by reference를 왜 하는거야!    //get(my_array, 30) = 1024;               //return by reference로 인해 my_array[30]과 get(my_array, 30)이 같은 것을 가리킨다
     //get(my_array, 30) *= 10;                //array는 미리 메모리에 저장해두고 reference로 call하고 return하여 안전하게 사용가능(자주 사용한다)
 
     //cout << my_array[30] << endl;           //return by reference 사용하는 경우
