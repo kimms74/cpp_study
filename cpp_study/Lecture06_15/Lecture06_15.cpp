@@ -17,7 +17,7 @@ int main()
 
 
     //const int x = 5;
-    //const int &ref_x = x;
+    //const int &ref_x = x;     //reference variable에 const lvalue 대입 불가능하므로 variable에 const붙여준다
 
     //const int &ref_x2 = ref_x;
      
@@ -29,7 +29,7 @@ int main()
     //const int &ref_x2 = ref_x;
 
     
-    
+
     
 
     const int &ref_x = 3+4;     //const int &로 type을 하면 상수도 넣을 수 있고, 주소도 가지게 된다

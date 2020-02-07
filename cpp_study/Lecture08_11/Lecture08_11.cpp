@@ -80,7 +80,8 @@ int main()
     
     int (Something:: * fptr1)() = &Something::temp; //member function은 class에 속해있으므로 &을 붙여줘야한다
                                                     //또한 pointer function의 소속을 나타내기 위해 Something::을 붙인다
-
+                                                    //*의 의미:member function의 pointer를 복사하겠다는 말
+    
     cout << (s2.*fptr1)() << endl;  //class안의 member function에 접근할 때 s2.*을 붙이는 이유
                                     //fptr1이 Something::temp의 pointer를 가지고 있는데
                                     //이 pointer의 함수를 실행시킬 때 s2라는 instance의 pointer를 넘겨주고
@@ -88,7 +89,7 @@ int main()
                                     //member functnion 자체가 고유의 pointer를 가지고 있고 instance에 따라 this pointer를 사용해 실행시킨다
                                     //non static member function은 instance에 종속돼있기에 this pointer가 없으면 작동 안한다
                                     //그러므로 non static member function 내부에 this pointer가 숨어있다
-    
+                                    //class function pointer의 경우 .*으로 부른다(class 내에 fptr1이라는 함수가 없으므로 *로 원본을 찾아가는것)
     
     
     

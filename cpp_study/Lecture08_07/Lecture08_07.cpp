@@ -49,8 +49,8 @@ public:
 int main()
 {
     Simple s1(1), s2(2);
-    s1.setID(2);
-    s2.setID(4);
+    s1.setID(2);                        //s1.setID(2)는 실제로는 setID(&s1,2)로 작동함
+    s2.setID(4);                        //자동으로 member fuction안의 variable앞에 this->가 붙어짐
 
     cout << &s1 << " " << &s2 << endl;
 

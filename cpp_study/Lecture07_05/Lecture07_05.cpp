@@ -22,13 +22,13 @@ int* allocateMemory(int size)       // return by pointer 사용하는 경우
 }                                   //delete[]을 main()에서 해줘야해서 번거롭다
 
 int& getValue(int x)       //return by reference    //line 78, 82
-{
+{                           //지역변수를 return할 때는 return by reference 사용안함
     int value = x * 2;
     return value;
 }
 
 int &get(std::array<int, 100> &my_array, int ix)        //return by reference 사용하는 경우 
-{
+{                                               //함수를 lvalue로 쓰고싶을 때 사용한다!
     return my_array[ix];
 }
 
@@ -88,16 +88,16 @@ int main()
     //array<int, 100> my_array;               //메모리에 미리 array이가 저장되어있음
     //my_array[30] = 10;
 
-    return by reference를 왜 하는거야!    //get(my_array, 30) = 1024;               //return by reference로 인해 my_array[30]과 get(my_array, 30)이 같은 것을 가리킨다
+    //get(my_array, 30) = 1024;               //return by reference로 인해 my_array[30]과 get(my_array, 30)이 같은 것을 가리킨다
     //get(my_array, 30) *= 10;                //array는 미리 메모리에 저장해두고 reference로 call하고 return하여 안전하게 사용가능(자주 사용한다)
-
-    //cout << my_array[30] << endl;           //return by reference 사용하는 경우
+    //                                        //return by reference만 lvalue이다!, *(ptr)도 lvalue이다
+    //cout << my_array[30] << endl;           
 
 
 
 
     //S my_s = getStrct();                    //struct를 이용해 return을 여러개 받는 법, c는 이 방법을 사용(대신 c++보다는 조금 더 빠르다)
-    //my_s.a;
+    //my_s.a;                               //단점:함수 하나를 만들 때마다 구조체를 만들어줘야한다
 
 
 

@@ -15,7 +15,7 @@ int main()
 
 
     //unsigned int a = 3;
-    //cout << std::bitset<8>(a << 1) << " " << (a << 1) << endl;
+    //cout << std::bitset<8>(a << 1) << " " << (a << 1) << endl;    //bitset<>: <>안의 숫자만큼의 bit 자리수의 2진법 수를 보여준다
     //cout << std::bitset<8>(a << 2) << " " << (a << 2) << endl;
     //cout << std::bitset<8>(a << 3) << " " << (a << 3) << endl;
     //cout << std::bitset<8>(a << 4) << " " << (a << 4) << endl;

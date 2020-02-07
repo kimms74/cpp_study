@@ -51,13 +51,13 @@ public:
     string s_value = "default";
 
     const string& getValue() const  //member function을 const로 만들 때 보통 return도 const로 만든다
-    {
+    {                               
         cout << "const version" << endl;
         return s_value; 
     }
 
-return by reference를 왜 하는거야!    string& getValue()              //member function의 const여부가 overloading 가능함을 보여줌
-    {
+    string& getValue()              //member function의 const여부가 overloading 가능함을 보여줌
+    {                               
         cout << "non-const version" << endl;
         return s_value; 
     }
@@ -67,7 +67,7 @@ return by reference를 왜 하는거야!    string& getValue()              //member f
 
 int main()
 {
-    //const Something something;    //const: something 안의 것을 바꾸지 않겠다는 의미
+    //const Something something;    //const: something 안의 것을 바꾸지 않겠다는 의미(member variable을 const로 만든 것과 같다)
     ////something.setValue(3);      //const class이므로 오류발생
 
     //something.getValue; // getValue() 뒤에 const가 붙어있어 실행 가능
@@ -87,11 +87,15 @@ int main()
     
     
     Something something;        //non-const reference
-    something.getValue() = 10;  //값을 변경할 수 있다
+    something.getValue() = "10";  //return by non-const reference이므로 값 변경 가능(return by reference는 lvalue이다)
+    cout << something.getValue() << endl;
 
     const Something something2; //const reference
-    something2.getValue();      //값 변경 안됨
+    something2.getValue();      //return by const reference이므로 값 변경 불가능
     
-    
+    //보통 member function의 parameter가 다를 경우에만 overloading이 가능하지만
+    //member function이 const인가 아닌가로도 overloading이 가능하다
+    //return type을 바꾸는 것으로는 overloading 불가능
+
     return 0;
 }
