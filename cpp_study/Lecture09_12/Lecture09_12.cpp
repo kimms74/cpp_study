@@ -1,4 +1,4 @@
-//std::initializer_list
+//std::initializer_list: array에 값을 할당하게 해주는 것
 
 #include <iostream>
 #include <cassert>
@@ -19,7 +19,9 @@ public:
         m_data = new int[length];
     }
 
-    IntArray(const std::initializer_list<int>& list)
+    IntArray(const std::initializer_list<int>& list)    //<int> &list의 의미:list 원본을 가져오겠다
+    //IntArray(const std::initializer_list<int&> list)  //안되는 이유: list로 array를 넣을 경우 각 원소를 parameter로 인식해버린다
+
         :IntArray(list.size())      //다른 생성자를 불러 object생성함(중복되는 기능은 가급적 쪼개서 한군데에서만 구현이 되도록 하기!
     {                               //다른 곳에서는 불러와서 사용하는 것!
         

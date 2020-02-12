@@ -41,7 +41,7 @@ class Doctor
 {
 private:
     std::string m_name;
-    vector<Patient*> m_patients;
+    vector<Patient*> m_patients;          //<Patient>*가 아닌<Patient*>인 이유: pointer 변수를 담는다는 의미(<Patient>*는 Patient라는 타입에 reference를 담겠다는 말)
     vector<Doctor*> m_doctors;           //doctor가 doctor를 만나는 경우(reflexive association)
 
 public:

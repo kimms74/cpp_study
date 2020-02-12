@@ -5,12 +5,12 @@ class Student
 {
 private:
 	std::string m_name;
-	int m_intelligence;
+	int m_intel;
 	//TODO: add more members like address, phone, favorate food, habits, ...
 
 public:
 	Student(const std::string name_in=" ", const int& intel_in=0)
-		:m_name(name_in), m_intelligence(intel_in)
+		:m_name(name_in), m_intel(intel_in)
 	{}
 
 	void setName(const std::string& name_in)
@@ -20,7 +20,7 @@ public:
 
 	void setIntel(const int& intel_in)
 	{
-		m_intelligence = intel_in;
+		m_intel = intel_in;
 	}
 
 	std::string getName()
@@ -30,12 +30,12 @@ public:
 	
 	int getIntel()
 	{
-		return m_intelligence;
+		return m_intel;
 	}
 
 	friend std::ostream& operator << (std::ostream& out, const Student& student)
 	{
-		out << student.m_name << " "<< student.m_intelligence;
+		out << student.m_name << " "<< student.m_intel;
 
 		return out;
 	}
