@@ -101,6 +101,8 @@ int main()
         my_animals[i]->speak(); //my_animals[i]는 pointer이므로 -> 사용
 
 
+    //다형성: base class의 pointer variable에 derived class instance의 pointer를 할당할 수 있다
+    //따라서 instance의 runtime types에 따라 함수의 기능에 차이를 보인다(virtual function을 통한 override 사용)
 
     return 0;
 }

@@ -31,7 +31,7 @@ public:
 class D : public C
 {
 public:
-    int print() { cout << "D " << endl; return0; }  //base class의 overriding 함수와 return type이 다르다고 알려줌
+    int print() { cout << "D " << endl; return 0; }  //base class의 overriding 함수와 return type이 다르다고 알려줌
 };                                                  //상속 구조에서는 base class가 가장 중요하다
                                                     //overloading시에도 return type이 다른걸로는 불가능함 (return type 건들이지마!)
 int main()
