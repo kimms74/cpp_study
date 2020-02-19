@@ -29,7 +29,7 @@ int& getValue(int x)       //return by reference    //line 78, 82
 
 int &get(std::array<int, 100> &my_array, int ix)        //return by reference 사용하는 경우 
 {                                               //함수를 lvalue로 쓰고싶을 때 사용한다!
-    return my_array[ix];
+    return my_array[ix];                        //return 값이 local variable이 아닐 때
 }
 
 struct S
