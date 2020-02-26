@@ -20,7 +20,7 @@ int main()
         my_array[i] = i + 65;
 
     my_array.print();
-
+     
 
 
 
