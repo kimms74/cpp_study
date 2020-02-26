@@ -25,8 +25,8 @@ public:
     //    cout << m_x << " " << m_y << " " << m_z;
     //}
 
-    friend std::ostream& operator << (std::ostream& out, const Point& point)    
-    {
+    friend std::ostream& operator << (std::ostream& out, const Point& point)    //ostream엔 const 안붙는 이유: << 뒤에 들어올 type이 뭔지 알 수 없기 때문이다(out <<(bool, char, int ...))
+    {                                                                           //return by reference하는 이유: ostream은 복사를 허용하지 않는다
         out << "(" << point.m_x << " " << point.m_y << " " << point.m_z << ")"; //member function이 아니기 때문에 자동으로 this->를 안붙여주므로 point.를 직접 넣어줘야함
                                                                                 //parameter로 ostream library의 class를 사용하기에 member function으로 사용하지 않는다                                                  
                                                                                 //(산술 연산자일 경우 다른 library를 사용하지 않아 member function으로 바로 작성해도 된다)

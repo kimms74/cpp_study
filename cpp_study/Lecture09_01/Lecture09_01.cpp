@@ -20,7 +20,7 @@ public:
 
 
     Cents operator + (const Cents& c2)          //operator +를 member function으로 사용할 때
-    {                                           //parameter를 한개만 써야한다
+    {                                           //parameter를 한개만 써야한다(왼쪽 피연산자가 연산자를 호출하는 형태이므로)
                                                 //cents1.operator+(cents2)처럼 작동한다
                                                 //실제는 operator+(&cents1,cents2)로 작동함(위와 똑같다)
        

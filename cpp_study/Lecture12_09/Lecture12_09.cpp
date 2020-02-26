@@ -53,14 +53,13 @@ int main()
     //std::vector<Base> my_vec;   //slicing 발생
 
     //std::vector<Base*> my_vec;                    //pointer로 vector에 넣는 법
-    //vector<std::reference_wrapper<int>> my_vec;
     //my_vec.push_back(&b);
     //my_vec.push_back(&d);
 
     //for (auto& ele : my_vec)
     //    ele->print();
 
-
+    //vector<std::reference_wrapper<int>> my_vec;
     std::vector<reference_wrapper<Base>> my_vec;        //reference로 vector에 넣는 법
     my_vec.push_back(b);
     my_vec.push_back(d);

@@ -23,8 +23,9 @@ public:
         return out;
     }
 
-    friend bool operator == (const Cents&c1, const Cents&c2)
-    {
+    friend bool operator == (const Cents&c1, const Cents&c2)    //friend를 사용하는 이유: member function으로 사용하면 왼쪽 피연산자가 연산자를 호출하는 형태이므로
+    {                                                           //parameter는 한개만 넣을 수 있다(연산자 왼쪽 피연산자가 이미 하나의 parameter이므로)
+                                                                //하지만 friend를 사용하면 parameter 순서에 상관없이 2개를 넣어 쓸 수 있다)
         return c1.m_cents == c2.m_cents;
     }
 
