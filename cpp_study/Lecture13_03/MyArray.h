@@ -7,43 +7,34 @@ template<typename T, unsigned int T_SIZE>	//m_length ´ë½Å template parameter¸¦ Ç
 class MyArray
 {
 private:
-	T* m_data;	// T m_data[T_SIZE]
-
+	T* m_data;	// T m_data[T_SIZE]: stackÀº ¸Þ¸ð¸®°¡ ÀÛÀ¸¹Ç·Î µ¿ÀûÇÒ´çÀ¸·Î heap¿¡ Àâ´Â°Ô ÁÁ´Ù
+				//T_SIZE°¡ ÀÛÀ» °æ¿ì¿¡´Â ±×³É stack¿¡ ½×¾Æµµ µÊ
 public:
 	MyArray()
 	{
-		m_length = 0;
-		m_data = nullptr;
-	}
-
-	MyArray(int length)
-	{
-		m_data = new T[T_SIZE];
+		m_data = new T [T_SIZE];
 	}
 
 	~MyArray()
 	{
-		reset();
-	}
-
-	void reset()
-	{
 		delete[] m_data;
-		m_data = nullptr;
-		m_length = 0;
 	}
 
-	T& operator [] (int index)
-	{
-		assert(index >= 0 && index < m_length);
+	T& operator [] (int index)		//member functionÀ¸·Î ÀÛ¼ºÇÒ °æ¿ì opeartorÀÇ parameter´Â ÇÑ°³¸¸ µé¾î°¡¾ßÇÑ´Ù
+	{								//ÀÌ Å¬·¡½º°¡ member functionÀ» ºÎ¸£´Â °³³äÀÌ±â ¶§¹®¿¡ []¾Õ¿¡ class instance°¡ ÀûÇôÀÖ¾î¾ßÇÑ´Ù( ex) myarray[10])
+		assert(index >= 0 && index < T_SIZE);
 		return m_data[index];
 	}
 
 	int getLength()
 	{
-		return m_length;
+		return T_SIZE;
 	}
 
-	void print();		// move definition locationÀ» ÅëÇØ ¹ÛÀ¸·Î »©³¿
-
+	void print()		// explicit instantiationÀ» ÇÒ °æ¿ì 0~¸¶Áö¸· ¼ýÀÚ±îÁö ÀÏÀÏÀÌ ´Ù ÇØÁà¾ßÇÑ´Ù(lecture 13_02 MyArray.cppÆÄÀÏ È®ÀÎÇÏ±â)
+	{					// ±×·¯¹Ç·Î non-type template parameter¸¦ ¾µ °æ¿ì¿¡´Â ÀüºÎ Çì´õ¿¡ Áý¾î³Ö´Â°Ô ÁÁ´Ù
+		for (int i = 0; i < T_SIZE; ++i)
+			std::cout << m_data[i] << " ";
+		std::cout << std::endl;
+	}
 };
