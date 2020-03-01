@@ -34,15 +34,15 @@ public:
 		unsigned char mask = 1 << index;	//bit mask(lecture 03_09)
 
 		if (value)
-			m_data |= mask;
+			m_data |= mask;		//get mask
 		else
-			m_data &= ~mask;
+			m_data &= ~mask;	//lose mask
 	}
 
 	bool get(int index)
 	{
 		unsigned char mask = 1 << index;
-		return (m_data & mask) != 0;
+		return (m_data & mask) != 0;	//0이면 false, 1이 있으면 true
 	}
 
 };

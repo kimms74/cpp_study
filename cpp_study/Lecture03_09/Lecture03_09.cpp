@@ -74,11 +74,11 @@ int main()
     //    items_flag ^= (opt1 | opt2);
     //}
     //cout << bitset<8>(items_flag) << endl;
-    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 같은 곳에 사용함
+    ////glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 같은 곳에 사용함
 
 
 
-    //bit mask
+    ////bit mask
 
     const unsigned int red_mask = 0xFF0000;
     const unsigned int green_mask = 0x00FF00;

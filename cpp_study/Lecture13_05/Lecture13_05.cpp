@@ -86,7 +86,21 @@ int main()
     for (int count = 0; count < 8; ++count)
         cout << intStorage.get(count) << '\n';
 
+    cout << "Sizeof Storage8<int> " << sizeof(Storage8<int>) << endl;   //32bytes가 나온다
+                                                                        //int가 4bytes이므로 arrray에 8개가 담기기 때문이다
 
+
+    //Define a Storage8 for bool
+    Storage8<bool> boolStorage;
+    for (int count = 0; count < 8; ++count)
+        boolStorage.set(count, count & 3);  //3은 0b0110이므로 count가 0,4일 때 false가 나온다
+
+    for (int count = 0; count < 8; ++count)
+        //cout << (boolStorage.get(count) ? "true" : "false") << '\n';  //c style true,false 출력
+        cout << boolalpha << boolStorage.get(count) << '\n';    //c++ style bool을 true, false로 출력하는 법
+
+    cout << "Sizeof Storage8<bool> " << sizeof(Storage8<bool>) << endl; //0b11101110이므로 1byte가 나온다
+                                                                        //template specialization을 없애면 8bytes가 나온다(bool은 1bit이라도 1byte에 담기므로)
 
     return 0;
 }
