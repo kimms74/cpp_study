@@ -64,13 +64,12 @@ int main()
 
 
     Intlist my_list;
-    Intlist* list = new Intlist;    //동적 할당(Intlist type에 해당하는 크기의 메모리를 가져와 그 메모리 주소를 반환해주는것)
-                                    //동적 array 만들 거 아니면 이렇게 쓰지마(헷갈린다)
+    Intlist* list = new Intlist;    //동적 할당이지만 array는 아니다 (동적할당 array는 new Intlist[length] 이런 식으로 쓰는 것이다)
+                                    //그냥 pointer와의 차이점: 메모리를 heap에서 가져온다(pointer는 stack에서 가져옴)
 
     (*list)[3] = 10;                //(*list)로 object접근 //operator overloading 사용한 것
     
-    list[3] = my_list;              //list[3]의미: list array의 3번째 인자에 class my_list를 넣겠다고 가정하는것
-                                    //실제로는 list는 array가 아니다, 이상한 문법이므로 쓰지말 것
+    list[3] = my_list;              //list[3]의미: list는 그냥 동적할당인데 list를 마치 동적할당 array인 것처럼 쓰면 잘못된 문법이다
 
 
 
