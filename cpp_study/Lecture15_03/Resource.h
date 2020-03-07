@@ -32,6 +32,13 @@ public:
 			m_data[i] = res.m_data[i];			
 	}
 
+	~Resource()
+	{
+		std::cout << "Resource dstroyed " << std::endl;
+
+		if (m_data != nullptr) delete[] m_data;
+	}
+
 	Resource& operator = (Resource& res)
 	{
 		std::cout << "Resource copy assignment" << std::endl;
@@ -45,8 +52,10 @@ public:
 
 		for (unsigned i = 0; i < m_length; ++i)	//deep copying(깊은 복사)	//memory를 따로 만들어줌으로 trouble 발생하지 않는다
 			m_data[i] = res.m_data[i];
+
+		return *this;
 	}
-	
+
 	void print()
 	{
 		for (unsigned i = 0; i < m_length; ++i)

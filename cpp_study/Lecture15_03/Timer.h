@@ -5,7 +5,7 @@
 #include <random>
 #include <chrono>
 
-class Timer //lecture 10_05에서 가져옴
+class Timer //lecture 10_05에서 가져옴   //elapsed() return 값을 double로 수정함
 {
     using clock_t = std::chrono::high_resolution_clock;
     using second_t = std::chrono::duration<double, std::ratio<1>>;
