@@ -4,7 +4,7 @@
 template<class T>
 class AutoPtr
 {
-public:
+private:
 	T* m_ptr;
 
 public:
