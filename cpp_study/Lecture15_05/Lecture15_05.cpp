@@ -16,11 +16,11 @@ auto doSomething()
 }                                                       //내부적으로 move semantics를 사용함(빠르다!)
 
 void doSomething2(std::unique_ptr<Resource>& res)   //l-value reference를 받는다                 
-{
+{                                                   //reference로 안넣으면 오류남(unique_ptr을 이용하기 때문에)
     res->setAll(10);
 }
 
-void doSomething3(std::unique_ptr<Resource> res)    //reference로 안넣으면 오류남(unique_ptr을 이용하기 때문에)
+void doSomething3(std::unique_ptr<Resource> res)    
              
 {
     res->setAll(30);
@@ -40,6 +40,11 @@ void doSomething5(Resource* res)                  //pointer만 넘겨주고 작업하는 
 {
     res->setAll(50);
     res->print();
+}
+
+void doSomething(std::unique_ptr<Resource> res)
+{
+
 }
 
 int main()
@@ -166,6 +171,12 @@ int main()
 
 //    res1->print();
 //}
+
+
+
+//doSomething(std::unique_ptr<Resource>(new Resource(10000000)));
+doSomething(std::make_unique<Resource>(10000000));  //함수의 parameter로 unique_ptr을 사용할 때 unique_ptr보다는 
+                                                    //make_ptr을 통해 직접적으로 만들어주는게 좋다
 
 
 
