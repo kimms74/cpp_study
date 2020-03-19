@@ -1,4 +1,4 @@
-//istream
+//Input with istream
 
 #include <iostream>
 #include <string>
