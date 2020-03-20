@@ -29,7 +29,7 @@ int main()
 
 
 
-    //bit flag
+    //bit flag  //숫자를 1 or 0으로만 표현하는 것
 
     //const unsigned char opt0 = 1 << 0;
     //const unsigned char opt1 = 1 << 1;
@@ -78,8 +78,8 @@ int main()
 
 
 
-    ////bit mask
-
+    ////bit mask    //창틀 페인트칠 할때 유리에 마스킹 테이프 붙이는 것처럼 원치않는 부분은 막아주는 기능?
+                    //bit mask가 원치않는 부분이 변하는 것을 막아준다
     const unsigned int red_mask = 0xFF0000;
     const unsigned int green_mask = 0x00FF00;
     const unsigned int blue_mask = 0x0000FF;

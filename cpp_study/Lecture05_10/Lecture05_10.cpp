@@ -11,10 +11,10 @@ int getInt()
         int x;
         cin >> x;
 
-        if (std::cin.fail())
-        {
-            std::cin.clear();
-            std::cin.ignore(32767, '\n');
+        if (std::cin.fail())    //cin에 int가 아닌 다른 type이 들어갈 경우 failure mode로 빠지게 되는데
+        {                       //cin.fail()이 이를 감지하여 failure mode일 경우 1, true를 반환한다
+            std::cin.clear();   //failure mode를 normal mode로 되돌려준다
+            std::cin.ignore(32767, '\n');   //buffer에서 1024개수 만큼 지우겠다, '\n'을 만나면 도중에 끝내겠다
             cout << "Invalid number, please try agin" << endl;
         }
         else
