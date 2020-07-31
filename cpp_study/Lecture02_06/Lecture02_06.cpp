@@ -1,3 +1,5 @@
+//Boolean values    //변수에 조건문을 넣는다
+
 #include <iostream>
 
 bool isEqual(int a, int b)
@@ -16,9 +18,9 @@ int main()
     bool b3{ true }; // uniform ''
     b3 = false;
 
-    //cout << std::boolalpha;
+    //cout << std::boolalpha;   //이 코드 아래로의 bool 출력을 true,false로 해준다
     //cout << !b3 << endl;
-    //cout << !b1 << endl;
+    //cout << !b1 << endl;  
 
     ////and operator
     //cout << (true && true) << endl;

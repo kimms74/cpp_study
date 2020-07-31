@@ -1,3 +1,5 @@
+//fixed-width integers
+
 #include <iostream>
 //#include <cstdint>
 
@@ -7,8 +9,7 @@ int main()
 
     std::int16_t i(5);
     std::int8_t myint = 65;
-
-
+        
     cout << myint << endl;
 
     std::int_fast8_t fi(5);

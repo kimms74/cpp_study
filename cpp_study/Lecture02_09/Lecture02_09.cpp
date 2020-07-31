@@ -1,3 +1,5 @@
+//Const, constexpr, and symbolic constants
+
 #include <iostream>
 #include "MY_CONSTANTS.h"
 
@@ -16,21 +18,21 @@ int main()
 
     //const double gravity{ 9.8 }; // const 는 반드시 initialization해야함
 
-    //compile 상수, runtime 상수와 구분하기 위해 constexpr로 표현함
-    
-    
-    
-    //constexpr int my_cost(123);
-
     //int number;
     //cin >> number;
-
-    ////runtime 상수, runtime 상수에 cosntexpr쓰면 오류 난다.
     //const int special_number(number);
+    
+    ////compile 상수: graivity(line 19)
+    ////runtime 상수: special_number(line 30)
+    ////compile 상수, runtime 상수가 문법적으로 차이가 안나기 때문에
+    ////구별을 위해 compile 상수를 constexpr로 쓴다!, runtime 상수에 constexpr를 쓰면 오류발생
 
+    //constexpr int my_cost(123);
 
 
     ////c스타일로 전처리기 define쓰기보다는 const로 표현하기
+    ////ex) #define PRICE_PER_ITEM 30, define 단점: debugging이 힘들다(의미하는 값을 찾아가서 확인해봐야함), 
+                                                ////#define은 전처리기이기 때문에 파일 전체에 영향을 미침(중괄호 밖에서 계속 존재하므로 범위 제한을 할 수 없다)
     //const int price_per_item = 10;
     //int num_item = 30;
     //int price = num_item / price_per_item;
@@ -41,7 +43,7 @@ int main()
     //헤더파일로 namespace안에 상수 정리하기
     double radius;
     cin >> radius;
-    double circumference = 2.0 * radius * constants::pi;
+    double circumference = 2.0 * radius * constants::pi;    //namespace constants안에 pi 상수를 가져옴
 
     return 0;
 }

@@ -1,3 +1,5 @@
+//integers
+
 #include <iostream>
 #include <cmath>
 #include <limits>
@@ -11,7 +13,8 @@ int main()
 	long l			= 1;
 	long long ll	= 1;
 	unsigned int u = -1;
-	//cout << sizeof(short) << endl; // 2 bytes = 2 * 8 bits = 16 bits
+	cout << sizeof(short) << endl; // 2 bytes = 2 * 8 bits = 16 bits	//signed에서는 1bit가 부호 표시에 사용되므로 2^15이 숫자 표현에 쓰인다
+	cout << sizeof(long) << endl;										//unsigned에서는 항상 >0이므로 모든 bit가 숫자로 표현됨
 
 	cout << std::pow(2, sizeof(short) * 8 -1) -1 << endl;
 	cout << std::numeric_limits<short>::max() << endl;

@@ -1,3 +1,5 @@
+//floating point numbers
+
 #include <iostream>
 #include <iomanip>
 #include <limits>
@@ -52,11 +54,11 @@ int main()
     double zero = 0.0;
     double posinf = 5.0 / zero;
     double neginf = -5.0 / zero;
-    double nan = zero / zero;
+    double nan = zero / zero;   // nan = Not-a-Number,   
     
     cout << posinf << " " << isinf(posinf) << endl; // inf 1, inf = inifinite
     cout << neginf << " " << isnan(neginf) << endl; // -inf 0
-    cout << nan << " " << isnan(nan) << endl; // -nan(ind) 1, nan = Not-a-Number, ind=indeterminated
+    cout << nan << " " << isnan(nan) << endl; // -nan(ind) 1, ind=indeterminated
     cout << 1.0 << " " << isnan(1.0) << endl;
 
     return 0;
