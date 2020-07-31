@@ -29,6 +29,9 @@ using namespace std;
 
 int main()
 {
+    cout << MySpace1::doSomething(3,4) << endl;
+    cout << MySpace2::doSomething(3,4) << endl;
+
     using namespace MySpace1::InnerSpace;
 
     cout << my_function() << endl;

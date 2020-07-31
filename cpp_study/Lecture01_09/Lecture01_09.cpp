@@ -14,7 +14,7 @@ int main()
     int x           = 1 + 2;
     int num_apples  = 123;
     
-    //this is important
+    //this is important //주석은 위에 달아주는게 보기 좋다
     int x = 1 + 2;
 
     // this is important too
