@@ -1,3 +1,5 @@
+//Comma and conditional operators
+
 #include <iostream>
 
 int main()
@@ -9,7 +11,7 @@ int main()
     //float a;
     //sizeof(float); //sizeof는 operator다
     //cout << sizeof(a) << endl; //표현 단위는 bytes
-    //sizeof a; // operator라 변수에는 ()없이 사용가능
+    //sizeof a; // operator라 변수를 넣을땐 ()없이 사용가능,but 자료형은 ()안에 넣어야함(함수는 변수가 ()안에 있어야함)
 
     //comma operator
     //int x = 3;
@@ -43,6 +45,6 @@ int main()
 
     int x = 5;
     cout << ((x % 2 == 0) ? "even" : "odd") << endl; // conditional operator 바깥에 ()씌워야함 ?:는 우선순위가 comma 다음으로 꼴찌이므로
-
-    return 0;
+                                                    //shift operator(L->R)인 <<가 ?:보다 우선순위가 높다
+    return 0;                                       //shift operator는 comparison operator보다 우선순위가 높다(<<,>>가 <=,>= ...보다 높다)
 }

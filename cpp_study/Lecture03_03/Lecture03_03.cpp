@@ -1,3 +1,5 @@
+//Increment/ decrement operators, and side effects
+
 #include <iostream>
 
 using namespace std;
@@ -23,13 +25,13 @@ int main()
     cout << x << " " << y << endl; //중요!
 
     int v = add(x, ++x); // 쓰지마!! 같은 변수에 대해 쓰지 않기
-    cout << v << endl; 
+    cout << v << endl;  //compiler에 따라 결과가 다르게 나옴
 
     int w = add(x, ++y);
     cout << w << endl;
 
     x = x++; // 쓰지마! 같은 변수에 대해 쓰지 않기
-    ++x;
+    ++x;    //마찬가지로 undefined
     x++; // 위 2방식으로 쓰기
     return 0;
 }

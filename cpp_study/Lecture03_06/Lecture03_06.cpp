@@ -1,3 +1,5 @@
+//Logical operators
+
 #include <iostream>
 
 int main()
@@ -19,7 +21,7 @@ int main()
     //int health = 10;
 
     //if (hit == true && health < 20) // if 두개로 표현하는 거 보다 논리 연산자로 하나로 표시하는게 좋다, else쓸 때 복잡해지므로
-    //    cout << "die" << endl;
+    //    cout << "die" << endl;    //&&,||는 comparison operator보다 우선순위가 낮지만 !는 comparison opeartor보다 높다
     //else
     //    health -= 20;
 
@@ -47,7 +49,7 @@ int main()
     
 
 
-    ////short circut evaluation
+    ////short circuit evaluation
     //int x = 2;
     //int y = 2;
 
@@ -55,7 +57,7 @@ int main()
     //{
     //    //do something
     //}
-    //cout << y << endl;
+    //cout << y << endl;    //y값은 그대로 2
 
 
 
@@ -64,7 +66,7 @@ int main()
     //bool y = false;
 
     //!(x && y);
-    //!x || !y;
+    //!x || !y; //두개가 동일하다
 
 
 
