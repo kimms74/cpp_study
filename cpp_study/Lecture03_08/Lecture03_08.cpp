@@ -1,3 +1,5 @@
+//Bitwise operators
+
 #include <iostream>
 #include <bitset>
 
@@ -29,7 +31,6 @@ int main()
     //cout << std::bitset<16>(a >> 2) << " " << (a >> 2) << endl;
     //cout << std::bitset<16>(a >> 3) << " " << (a >> 3) << endl;
     //cout << std::bitset<16>(a >> 4) << " " << (a >> 4) << endl;
-
 
     ////bitwise not
     //unsigned int a = 1024;

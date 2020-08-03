@@ -11,11 +11,11 @@ int main()
     unsigned char option_shared     = 0x08;
     unsigned char option_deleted    = 0x80;
 
-    //cout << bitset<8>(option_viewed) << endl;
-    //cout << bitset<8>(option_edited) << endl;
-    //cout << bitset<8>(option_liked) << endl;
-    //cout << bitset<8>(option_shared) << endl;
-    //cout << bitset<8>(option_deleted) << endl;
+    cout << bitset<8>(option_viewed) << endl;
+    cout << bitset<8>(option_edited) << endl;
+    cout << bitset<8>(option_liked) << endl;
+    cout << bitset<8>(option_shared) << endl;
+    cout << bitset<8>(option_deleted) << endl;
 
     unsigned char my_article_flags = 0;
 
@@ -33,7 +33,8 @@ int main()
     cout << bitset<8>(my_article_flags) << endl;
 
     // 본 기사만 삭제할 때
-    my_article_flags |= option_deleted;
+    if(my_article_flags & option_viewed)
+        my_article_flags |= option_deleted;
     cout << bitset<8>(my_article_flags) << endl;
 
 
