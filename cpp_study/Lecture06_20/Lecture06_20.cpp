@@ -32,7 +32,7 @@ int main()
     cout << endl;
 
     sort(my_arr.begin(), my_arr.end());     //sort(시작부분,끝부분)
-    for (auto &element : my_arr)
+    for (auto &element : my_arr)            //작은 숫자 -> 큰 숫자로 정렬해준다
         cout << element << " ";
     cout << endl;
     

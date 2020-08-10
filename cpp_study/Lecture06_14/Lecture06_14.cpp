@@ -1,3 +1,5 @@
+//Reference Variables   //int &v1 = ot.st.v1의 방식으로 자주 사용한다
+
 #include <iostream>
 
 using namespace std;

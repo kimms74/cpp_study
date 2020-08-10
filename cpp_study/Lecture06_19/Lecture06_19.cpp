@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     //int *ptr = nullptr;
-    //int **ptrptr = nullptr;
+    //int **ptrptr = nullptr;   //pointer에 대한 pointer인데 원래 변수는 int라는 것
 
     //int value = 5;
 
@@ -14,7 +14,7 @@ int main()
 
     //cout << ptr << " " << *ptr << " " << &ptr << endl;
     //cout << ptrptr << " " << *ptrptr << " " << &ptrptr << endl;
-    //cout << **ptrptr << endl;
+    //cout << **ptrptr << endl; //*(*ptrptr)로 볼 수 있다, (ptrptr의 주소가 가르키는 값)의 주소가 가르키는 값
 
     //int ***ptr, ****ptr;
 
@@ -32,7 +32,7 @@ int main()
     //int *r2 = new int[col] {6, 7, 8, 9, 10};
     //int *r3 = new int[col] {11, 12, 13, 14, 15};
 
-    //int **rows = new int *[row] {r1, r2, r3};     //int pointer의 array이를 만든 것
+    //int **rows = new int *[row] {r1, r2, r3};     //int pointer의 array를 만든 것
 
     //for (int r = 0; r < row; ++r)
     //{
@@ -47,7 +47,7 @@ int main()
     //int **matrix = new int *[row];
 
     //for (int r = 0; r < row; ++r)
-    //    matrix[r] = new int[col];   // int array가 들어가야하므로
+    //    matrix[r] = new int[col];   // int array가 들어가야하므로 new int를 넣는다
 
     //for (int r = 0; r < row; ++r)       //임의로 값 대입을 위해 짠 것(보통은 데이터를 가져다 쓴다)
     //    for (int c = 0; c < col; ++c)
@@ -63,7 +63,7 @@ int main()
 
     ////delete
     //for (int r = 0; r < row; ++r)
-    //    delete[] matrix[r];
+    //    delete[] matrix[r];       //matrix[]의 pointer를 먼저 제거한 후 matrix의 pointer를 제거한다
 
     //delete[] matrix;
 

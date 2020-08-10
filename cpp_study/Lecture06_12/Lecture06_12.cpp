@@ -15,15 +15,15 @@ int main()
     //cin >> length;
 
     ////int *array = new int[length];
-    ////int *array = new int[length] {}; // 기본으로 0으로 initialization
-    //int *array = new int[length] {11, 22, 33, 44, 55, 66}; // 6개 입력하고 만약 length=4로 하면 런타임 에러 발생
+    ////int *array = new int[length] {}; // 기본으로 0으로 initialization, {}대신 ()사용 가능
+    //int *array = new int[length] {11, 22, 33, 44, 55, 66}; // 6개 입력하고 만약 length=4로 하면 런타임 에러 발생, 6개 이상을 넣으면은 문제없다
 
     //array[0] = 1;
     //array[1] = 2;
 
     //for (int i = 0; i < length; ++i)
     //{
-    //    cout << uintptr_t(&array[i]) << endl;
+    //    cout << uintptr_t(&array[i]) << endl; //메모리 주소 출력 //(uintptr_t)&array[i]나 uintptr_t(&array[i])는 둘다 형변환을 해 정수로 표현해준다
     //    cout << array[i] << endl;
     //}
 

@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     ////array<int, 5> array;  //std::array
-    //vector<int> array;      //std::veoctor
+    //vector<int> array;      //std::veoctor    //array는 크기를 반드시 넣어줘야하지만 vector는 넣을 필요 없다
 
     //vector<int> array2 = { 1,2,3,4,5 };
 
