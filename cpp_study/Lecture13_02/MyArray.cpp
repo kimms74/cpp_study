@@ -16,7 +16,7 @@ void MyArray<T>::print()		//MyArray옆에 <T>를 확인할 수 있다
 	std::cout << std::endl;
 }
 
-//print() member function body가 hadder파일에 있을 때는 정상적으로 작동했지만 cpp파일로 옮기면 link 에러 발생한다
+//print() member function body가 headder파일에 있을 때는 정상적으로 작동했지만 cpp파일로 옮기면 link 에러 발생한다
 //cpp파일로 옮기게 되면 Lecture13_02의 MyArray<char> my_array(10);에서 <char>이라는 것을 cpp파일에서는 알 수 없기때문이다
 //그러므로 cpp파일에 따로 explicit instantiation을 해줘야한다
 

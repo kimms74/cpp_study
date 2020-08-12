@@ -29,7 +29,7 @@ public:
 		Resource(res.m_length);
 
 		for (unsigned i = 0; i < m_length; ++i)	//deep copying(깊은 복사)	//lecture09_11 참고
-			m_data[i] = res.m_data[i];			
+			m_data[i] = res.m_data[i];			//주소값만 복사하는 게 아닌 data 자체를 복사해 넣는것
 	}
 
 	~Resource()

@@ -12,9 +12,9 @@ private:
     int m_denominator;
 
 public:
-    Fraction(char) = delete; // delete
+    Fraction(char) = delete; // delete  //특정 type의 parameter를 입력 못하게 막는다
 
-    explicit Fraction(int num = 0, int den = 1) //explicit
+    explicit Fraction(int num = 0, int den = 1) //explicit  //converting constructor가 작동 못하게 막는다
         :m_numerator(num), m_denominator(den)
     {
         assert(den != 0);

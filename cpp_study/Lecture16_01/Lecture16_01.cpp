@@ -80,7 +80,7 @@ void associative_containers()
     //map : key / value
     {
         std::map<char, int> map;    //map은 2개의 input을 대응시키는 것   //앞이 key, 뒤가 value이다
-        map['c'] = 50;
+        map['c'] = 50;              //'c'가 key, 50이 value
         map['a'] = 10;
         map['b'] = 20;              //자동으로 알파벳 순으로 정렬을 해준다
 
@@ -101,8 +101,8 @@ void associative_containers()
     //multimap : duplicated keys        //key가 여러개일 수 있다
     {
         std::multimap<char, int> map;
-        map.insert(std::pair('a', 10));   //Before c++ 14, pair<char, int>('a', 10)
-        map.insert(std::pair('b', 10));
+        map.insert(std::pair('a', 10));     //Before c++ 14, pair<char, int>('a', 10)
+        map.insert(std::pair('b', 10));     //c++17부터는 type을 안넣어도 자동으로 처리해준다
         map.insert(std::pair('c', 10));
         map.insert(std::pair('a', 100));
 
@@ -110,7 +110,7 @@ void associative_containers()
 
         for (auto& e : map)
             cout << e.first << " " <<e.second << " ";   //알아서 정렬해준다 a a b c
-        cout << endl;
+        cout << endl;                                   //자료 구조를 공부해야 왜 정렬되는지 알 수 있다!
 
     }
 }

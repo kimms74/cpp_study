@@ -14,7 +14,7 @@ using namespace std;
 //    Resource* res = new Resource;
 //
 //    // work with res
-//    if (true) return; // early return   //이 경우 delete이 안돼 memory leak이 발생한다
+//    if (true) return; // early return의 경우 delete이 안돼 memory leak이 발생한다
 //
 //    delete res; //동적할당을 하면 delete도 반드시 해줘야한다
 //                //이 과정이 매우 귀찮다
@@ -32,7 +32,7 @@ using namespace std;
 //        // work with res
 //        if (true)
 //        {
-//            throw - 1; // exception //이 경우에도 throw를 하게 되면 delete 못하게 된다
+//            throw - 1; // exception의 경우에도 throw를 하게 되면 delete 못하게 된다
 //        }
 //        delete res;
 //    }
@@ -57,7 +57,7 @@ void doSomething()
         // work with res
         if (true)
         {
-            throw - 1; // exception //이 경우에도 throw를 하게 되면 delete 못하게 된다
+            throw - 1; //exception  //이 경우에도 자동으로 destructor를 실행시켜준다
         }
         //delete res;   //delete 필요없다
     }
@@ -84,13 +84,12 @@ int main()
     //    cout << res1.m_ptr << endl;
     //    cout << res2.m_ptr << endl;
 
-    //    res2 = res1;
-
-    //    cout << res1.m_ptr << endl;
-    //    cout << res2.m_ptr << endl;
-    //}                               //res2에 res1을 복사해 넣으면 Resource의 constructor는 한번만 실행되는데
-    //                                //{}을 빠져나오면서 destructor가 res1, res2에서 2번 실행돼 runtime error발생한다
-    //                                //이미 지워진 것을 또 지우려고 하기 때문이다
+    //    res2 = res1;                  //res2에 res1을 복사해 넣으면 Resource의 constructor는 한번만 실행되는데
+                                        //{}을 빠져나오면서 destructor가 res1, res2에서 2번 실행돼 runtime error발생한다
+    //    cout << res1.m_ptr << endl;   //이미 지워진 것을 또 지우려고 하기 때문이다
+    //    cout << res2.m_ptr << endl;   //new Resource에 대한 소유권을 res1,res2 둘 다 가지고 있어서 발생하는 문제! 
+    //}                               
+                       
 
 
 
@@ -129,3 +128,5 @@ int main()
 
     return 0;
 }
+    //AutoPtr의 한계: doSomething(res1)을 하면 res1의 소유권은 doSomething 내부 변수로 넘어가는데 이 때 함수가 끝나게 되면 사라지게 된다
+    //그러므로 unique_ptr이나 shared_ptr을 사용하면 된다

@@ -37,7 +37,7 @@ int main()
 
     const int& lr4 = x;     //Modifiable l-values
     const int& lr5 = cx;    //Non-modifiable l-values   //const이므로 가능
-    const int& lr6 = 5;     //R-values  //const int&에는 r-value넣는 것 가능(값을 안바꿀 것이므로)
+    const int& lr6 = 5;     //R-values  //const int&에는 r-value넣는 것 가능!(값을 안바꿀 것이므로)
 
 
 

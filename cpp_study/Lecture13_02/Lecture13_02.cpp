@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    //MyArray my_array(10);
+    //MyArray my_array(10); //어떤 type이 올지 안넣어서 error발생
 
     //for (int i = 0; i < my_array.getLength(); ++i)
     //    my_array[i] = i * 5;

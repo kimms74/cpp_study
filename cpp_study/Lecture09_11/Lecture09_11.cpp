@@ -1,5 +1,5 @@
 //Overloading the assignment operator, 	Shallow vs. deep copying
-
+                                        //shallow는 그냥 주소값을 복사해버리지만 deep copying은 값들을 복사해서, shallow에서 발생할 수 있는 문제점을 차단한다
 #include <iostream>
 #include <cassert>
 
@@ -46,7 +46,8 @@ public:
 
     //MyString(const MyString& source) = delete;    //직접 copy constructor를 만들지 못하는 경우(바빠서?)
                                                     //shallow copy가 발생하지 않게 아얘 지워버리는 것도 하나의 방법이다
-    MyString& operator = (const MyString& source)
+
+    MyString& operator = (const MyString& source)   //copy assignment
     {
         ////shallow copy
         //this->m_data = source.m_data;     //default copy constructor는 얉은 복사를 한다(주소값을 그대로 복사해옴)
@@ -91,13 +92,13 @@ int main()
     //cout << hello.getString() << endl;  //char*은 문자열로 인식한다
 
     //{
-    //    MyString copy = hello;          //copy constructor 호출
+    //    MyString copy = hello;          //copy를 생성하므로 assignment operator가 아닌 copy constructor 호출(헷갈림 주의!)
     //    cout << (int*)copy.m_data << endl;
-    //    cout << copy.getString() << endl;   //중괄호를 벗어나면서 heap에 있는 data를 지워버려
-    //}                                       //hello의 m_data 데이터가 날아가버림(같은 주소를 가지고 있으므로)
+    //    cout << copy.getString() << endl;   
+    //}                                       
 
-    //cout << hello.getString() << endl;
-
+    //cout << hello.getString() << endl;    //중괄호를 벗어나면서 heap에 있는 data를 지워버려
+                                            //hello의 m_data 데이터가 날아가버림(같은 주소를 가지고 있으므로)
 
 
 

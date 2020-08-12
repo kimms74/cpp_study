@@ -8,7 +8,7 @@ int main()
 
     typedef double distance_t;
 
-    std::int8_t i(97); // int8_t도 typedef로 만든것
+    std::int8_t i(97); // int8_t도 typedef로 만든것  //_t: primitive system data type으로 크기를 고정시켜 표현하려는 것
 
     double     my_distance;
     distance_t home2work;

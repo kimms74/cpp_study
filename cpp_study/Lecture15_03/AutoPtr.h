@@ -27,7 +27,7 @@ public:
 
 	//	//deep copy		//deep copy는 값을 하나하나 복사하므로 느리다
 	//	m_ptr = new T;
-	//	*m_ptr = *a.m_ptr;	//m_ptr이 Resource같은 class일 경우에는 copy assignment operator overloading된 것를 호출하는 것
+	//	*m_ptr = *a.m_ptr;	//m_ptr이 Resource같은 class일 경우에는 copy assignment operator overloading된 것를 호출해 deep copying을 할 것이다
 	//}
 
 	//AutoPtr& operator = (const AutoPtr& a)	//copy assignment	//parameter로 l-value reference 사용
@@ -51,7 +51,7 @@ public:
 	//AutoPtr(const AutoPtr& a) = delete;	//copy constructor를 못쓰게 막는 코드
 	//AutoPtr& operator = (const AutoPtr& a) = delete;	//copy assignment를 못쓰게 막는 코드
 
-	AutoPtr(AutoPtr&& a)				//move constructor	//r-value reference 사용
+	AutoPtr(AutoPtr&& a)				//move constructor	//r-value reference를 parameter로 받을 때 사용(shallow copy 하는것)
 		: m_ptr(a.m_ptr)
 	{
 		a.m_ptr = nullptr;	//really necessary?	//일단 소유권을 넘겨줬으므로 깔끔하게 지워주는게 좋다
@@ -59,7 +59,7 @@ public:
 		std::cout << "AutoPtr move constructor " << std::endl;
 	}
 	
-	AutoPtr& operator = (AutoPtr&& a)	//move assignment	//r-value reference 사용
+	AutoPtr& operator = (AutoPtr&& a)	//move assignment	//r-value reference를 parameter로 받을 때 사용(shallow copy 하는것)
 	{
 		std::cout << "AutoPtr move assignment " << std::endl;
 
